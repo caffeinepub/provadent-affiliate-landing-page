@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-centralized-landing-page-image-path-module-frontend-src-constants-landingimages-ts-to-use-the-user-provided-github-raw-image-urls-instead-of-the-current-assets-uploads-paths-mapping-each-url-to-the-correct-landing-images-key-hero-solution-benefitsstrip1-benefitsstrip2-ingredients-testimonials-strongcta",
+      "featureTitle": "Update the centralized landing page image path module (frontend/src/constants/landingImages.ts) to use the user-provided GitHub raw image URLs instead of the current /assets/uploads/* paths, mapping each URL to the correct LANDING_IMAGES key (hero, solution, benefitsStrip1, benefitsStrip2, ingredients, testimonials, strongCta).",
+      "files": [
+        "frontend/src/constants/landingImages.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-22"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

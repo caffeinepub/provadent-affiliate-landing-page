@@ -1,0 +1,263 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 11,
+  "summary": "Design and build a high-conversion, CRO-focused affiliate landing page for the oral health probiotic supplement “ProvaDent”, optimized for mobile, with a clean medical/dental aesthetic, persuasive compliant copy, no pricing shown, and all CTAs redirecting to the provided affiliate link.",
+  "architectural_notes": [
+    "Mobile-first, fast-loading landing page with white background and blue/teal accents for a clinical/dentist-approved feel.",
+    "Compliance constraints: no pricing displayed; avoid exaggerated/medical cure claims; include affiliate + health disclaimers in footer.",
+    "All CTA buttons must redirect to the single affiliate URL provided.",
+    "User requests removing affiliate + health disclaimers from footer, which conflicts with existing compliance constraints requiring these disclaimers.",
+    "Centralize image references via a single shared image asset file/module so all sections import/use the same canonical paths (reduces broken/missing images).",
+    "User provided new canonical image sources as GitHub raw URLs; update the centralized image asset/module to use these URLs for the 7 ProvaDent images: images (1) (2).jpeg through images (1) (8).jpeg from https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/"
+  ],
+  "known_issues": [
+    "Images are not displaying on the page (user reports images not showing; likely asset/path/build issue)."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-mobile-first-affiliate-landing-page-for-the-oral-health-probiotic-supplement-provadent-with-the-exact-section-structure-provided-by-the-user-hero-above-the-fold-problem-provadent-solution-key-benefits-icon-grid-how-it-works-3-steps-ingredients-formula-social-proof-testimonials-trust-safety-strong-cta-section-faq-and-footer",
+      "title": "Create a single-page, mobile-first affiliate landing page for the oral health probiotic supplement “ProvaDent” with the exact section structure provided by the user: Hero (above the fold), Problem, ProvaDent Solution, Key Benefits (icon grid), How It Works (3 steps), Ingredients/Formula, Social Proof/Testimonials, Trust & Safety, Strong CTA section, FAQ, and Footer.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-strict-cta-policy-across-the-entire-page-every-cta-button-must-be-labeled-exactly-buy-now-must-not-show-pricing-anywhere-on-the-page-and-must-redirect-to-the-affiliate-url-https-dentalsugarhack-vip-discovery-aff-nexora-8248",
+      "title": "Implement a strict CTA policy across the entire page: every CTA button must be labeled exactly “Buy Now”, must not show pricing anywhere on the page, and must redirect to the affiliate URL https://dentalsugarhack.vip/discovery#aff=Nexora_8248.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-clean-medical-dentist-approved-visual-theme-with-a-white-background-and-blue-teal-accents-premium-supplement-branding-and-a-fast-loading-layout-optimize-images-for-web-use-and-avoid-heavy-animations-ensure-consistent-typography-spacing-and-component-styling-across-all-sections",
+      "title": "Apply a clean, medical, dentist-approved visual theme with a white background and blue/teal accents, premium supplement branding, and a fast-loading layout (optimize images for web use and avoid heavy animations). Ensure consistent typography, spacing, and component styling across all sections.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-hero-section-requirements-include-a-strong-benefit-driven-headline-simple-sub-headline-explaining-oral-probiotics-a-centered-provadent-product-image-using-one-of-the-uploaded-images-trust-badges-reading-advanced-oral-probiotic-and-natural-formula-a-5-star-customer-satisfaction-line-and-a-prominent-buy-now-button-that-redirects-to-the-affiliate-url",
+      "title": "Hero section requirements: include a strong benefit-driven headline, simple sub-headline explaining oral probiotics, a centered ProvaDent product image using one of the uploaded images, trust badges reading “Advanced Oral Probiotic” and “Natural Formula”, a 5-star customer satisfaction line, and a prominent “Buy Now” button that redirects to the affiliate URL.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-write-and-render-compliant-realistic-marketing-copy-for-each-section-problem-solution-benefits-steps-ingredients-testimonials-trust-safety-faq-focusing-on-bad-breath-gum-comfort-plaque-tartar-buildup-support-oral-bacteria-balance-tooth-sensitivity-support-and-natural-probiotic-based-dental-solutions-without-exaggerated-or-disease-cure-claims",
+      "title": "Write and render compliant, realistic marketing copy for each section (Problem, Solution, Benefits, Steps, Ingredients, Testimonials, Trust & Safety, FAQ), focusing on bad breath, gum comfort, plaque/tartar buildup support, oral bacteria balance, tooth sensitivity support, and “natural probiotic-based dental solutions” without exaggerated or disease-cure claims.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-incorporate-the-7-uploaded-images-into-the-landing-page-as-product-visuals-and-supporting-imagery-use-the-cleanest-product-only-images-for-the-hero-and-cta-sections-avoid-using-any-uploaded-image-that-contains-affiliate-commission-epc-text-in-prominent-consumer-facing-areas-do-not-display-pricing-commission-data",
+      "title": "Incorporate the 7 uploaded images into the landing page as product visuals and supporting imagery. Use the cleanest product-only images for the Hero and CTA sections; avoid using any uploaded image that contains affiliate commission/EPC text in prominent consumer-facing areas (do not display pricing/commission data).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-benefits-icon-grid-section-with-5-items-supports-healthy-gums-helps-reduce-bad-breath-promotes-clean-teeth-naturally-supports-long-term-oral-health-easy-daily-tablet-use-simple-consistent-icons-and-short-supporting-text-for-each-benefit",
+      "title": "Create a benefits icon grid section with 5 items: Supports healthy gums; Helps reduce bad breath; Promotes clean teeth naturally; Supports long-term oral health; Easy daily tablet. Use simple, consistent icons and short supporting text for each benefit.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-how-it-works-section-as-3-simple-steps-with-numbered-styling-1-delivers-beneficial-oral-probiotics-2-balances-bacteria-in-mouth-gums-3-supports-healthier-teeth-fresher-breath",
+      "title": "Implement the “How it works” section as 3 simple steps with numbered styling: (1) Delivers beneficial oral probiotics; (2) Balances bacteria in mouth & gums; (3) Supports healthier teeth & fresher breath.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-social-proof-with-4-6-realistic-testimonials-focused-on-fresher-breath-cleaner-mouth-feeling-gum-comfort-and-confidence-while-smiling-ensuring-no-exaggerated-or-medical-cure-claims",
+      "title": "Add Social Proof with 4–6 realistic testimonials focused on fresher breath, cleaner-mouth feeling, gum comfort, and confidence while smiling, ensuring no exaggerated or medical cure claims.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-trust-safety-section-including-made-in-certified-facilities-gmp-compliant-non-gmo-secure-checkout-dentist-inspired-formulation-include-a-strong-cta-section-with-urgency-limited-availability-text-and-a-repeated-buy-now-button-linking-to-the-affiliate-url",
+      "title": "Build a Trust & Safety section including: Made in certified facilities, GMP compliant, Non-GMO, Secure checkout, Dentist-inspired formulation. Include a Strong CTA section with urgency/limited availability text and a repeated “Buy Now” button linking to the affiliate URL.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-faq-section-with-at-least-the-four-provided-faqs-is-provadent-safe-for-daily-use-how-long-before-results-who-should-use-provadent-does-it-replace-brushing-present-faqs-in-an-accessible-accordion-layout",
+      "title": "Add an FAQ section with at least the four provided FAQs: “Is ProvaDent safe for daily use?”, “How long before results?”, “Who should use ProvaDent?”, “Does it replace brushing?”. Present FAQs in an accessible accordion layout.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-footer-containing-an-affiliate-disclaimer-a-general-health-disclaimer-and-links-or-sections-for-privacy-policy-and-terms-conditions-as-plain-readable-text-do-not-require-user-authentication-or-backend-storage-for-these-policies",
+      "title": "Add a footer containing an affiliate disclaimer, a general health disclaimer, and links (or sections) for Privacy Policy and Terms & Conditions as plain, readable text. Do not require user authentication or backend storage for these policies.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-affiliate-disclosure-and-health-disclaimer-blocks-from-the-footer-section-ui-so-they-are-no-longer-rendered-on-the-landing-page",
+      "title": "Remove the Affiliate Disclosure and Health Disclaimer blocks from the footer section UI so they are no longer rendered on the landing page.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-styling-of-all-buy-now-cta-buttons-to-use-an-attractive-premium-looking-color-style-not-orange-while-keeping-the-label-exactly-buy-now-and-preserving-the-existing-affiliate-redirect-behavior",
+      "title": "Update the styling of all “Buy Now” CTA buttons to use an attractive, premium-looking color/style (not orange) while keeping the label exactly “Buy Now” and preserving the existing affiliate redirect behavior.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-all-7-user-uploaded-images-are-included-as-static-assets-and-visibly-incorporated-into-the-landing-page-layout-not-only-the-hero-updating-any-existing-image-paths-to-match-the-exact-uploaded-filenames",
+      "title": "Ensure all 7 user-uploaded images are included as static assets and visibly incorporated into the landing page layout (not only the hero), updating any existing image paths to match the exact uploaded filenames.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-single-centralized-frontend-module-that-exports-the-exact-file-paths-for-all-provided-uploaded-landing-page-images-all-7-images-and-refactor-every-landing-page-section-to-import-image-paths-only-from-this-module-no-hardcoded-string-paths-in-section-components",
+      "title": "Create a single centralized frontend module that exports the exact file paths for all provided/uploaded landing-page images (all 7 images), and refactor every landing-page section to import image paths only from this module (no hardcoded string paths in section components).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-issue-where-uploaded-images-are-not-showing-on-the-landing-page-by-ensuring-all-referenced-image-files-exist-as-static-assets-in-the-frontend-build-output-and-that-all-centralized-image-paths-resolve-correctly-at-runtime",
+      "title": "Fix the issue where uploaded images are not showing on the landing page by ensuring all referenced image files exist as static assets in the frontend build output and that all centralized image paths resolve correctly at runtime.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-styling-of-all-buy-now-cta-buttons-to-use-an-attractive-premium-orange-color-theme-including-hover-focus-states-while-keeping-the-label-exactly-buy-now-and-preserving-the-existing-affiliate-redirect-behavior",
+      "title": "Update the styling of all “Buy Now” CTA buttons to use an attractive, premium ORANGE color theme (including hover/focus states) while keeping the label exactly “Buy Now” and preserving the existing affiliate redirect behavior.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-shared-buynowbutton-component-styling-to-use-a-premium-attractive-orange-theme-including-hover-focus-active-disabled-states-while-keeping-the-label-exactly-buy-now-and-preserving-the-existing-redirect-behavior-to-https-dentalsugarhack-vip-discovery-aff-nexora-8248",
+      "title": "Update the shared BuyNowButton component styling to use a premium, attractive ORANGE theme (including hover/focus/active/disabled states) while keeping the label exactly “Buy Now” and preserving the existing redirect behavior to https://dentalsugarhack.vip/discovery#aff=Nexora_8248.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-buy-now-cta-button-directly-below-every-image-img-displayed-across-the-landing-page-sections-using-the-shared-buynowbutton-component-and-the-same-affiliate-redirect-behavior",
+      "title": "Add a “Buy Now” CTA button directly below every image (<img>) displayed across the landing page sections, using the shared BuyNowButton component and the same affiliate redirect behavior.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-standardize-landing-page-image-references-by-introducing-or-updating-if-already-present-a-single-centralized-frontend-module-that-exports-the-exact-static-asset-paths-for-all-uploaded-landing-page-images-and-refactor-all-landing-page-sections-to-import-image-paths-only-from-that-module-no-hardcoded-string-paths-in-section-components",
+      "title": "Standardize landing-page image references by introducing (or updating, if already present) a single centralized frontend module that exports the exact static asset paths for all uploaded landing-page images, and refactor all landing page sections to import image paths only from that module (no hardcoded string paths in section components).",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-centralized-landing-page-image-path-module-frontend-src-constants-landingimages-ts-to-use-the-user-provided-github-raw-image-urls-instead-of-the-current-assets-uploads-paths-mapping-each-url-to-the-correct-landing-images-key-hero-solution-benefitsstrip1-benefitsstrip2-ingredients-testimonials-strongcta",
+      "title": "Update the centralized landing page image path module (frontend/src/constants/landingImages.ts) to use the user-provided GitHub raw image URLs instead of the current /assets/uploads/* paths, mapping each URL to the correct LANDING_IMAGES key (hero, solution, benefitsStrip1, benefitsStrip2, ingredients, testimonials, strongCta).",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a fully structured, conversion-optimized ProvaDent affiliate landing page (hero, problem, solution, benefits icon grid, how-it-works steps, ingredients, testimonials, trust/safety, strong CTA, FAQ, footer disclaimers) with medical/clinical styling and compliant claims.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Configure all 'Buy Now' CTAs to use only the 'Buy Now' label, show no pricing anywhere, and redirect to https://dentalsugarhack.vip/discovery#aff=Nexora_8248.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Incorporate provided images (e.g., ProvaDent product image) into the landing page layout, centered in the hero section.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Remove the affiliate disclosure and general health disclaimer from the footer section.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add all available/provided images throughout the website (not only hero), ensuring they are incorporated into the landing page layout.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Centralize all provided images into a single shared asset/module/file and render images everywhere from that single source to prevent missing/broken image references across sections.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Set the “Buy Now” button color/style to an attractive, premium-looking ORANGE theme (per user preference).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Fix the issue where images are not showing/rendering on the landing page (likely broken paths or missing static assets).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add a “Buy Now” CTA button below each image throughout the landing page (in addition to existing CTAs), keeping the label exactly “Buy Now”, the premium attractive orange styling, and the same affiliate redirect URL.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Ensure all landing page sections continue to render their images exclusively via imports from LANDING_IMAGES so that the new URLs are used everywhere the landing page shows images (Hero, Solution, Benefits image strip, Ingredients, Testimonials supporting image, Strong CTA).",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "ProvaDent Affiliate Landing Page",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

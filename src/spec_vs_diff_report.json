@@ -1,0 +1,14 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T10:07:52.323Z",
+  "summary": "The diff updates the centralized landing image constants module to use 7 GitHub raw .jpeg URLs for the expected LANDING_IMAGES keys. No other landing section components were modified in the provided diff summary, so compliance with the “no hardcoded /assets/uploads/* paths in sections” requirement cannot be confirmed or disproven from this diff alone.",
+  "missing_requirements": [],
+  "hallucinated_features": [],
+  "confidence": 0.62,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/constants/landingImages.ts",
+    "project_state.json"
+  ]
+}

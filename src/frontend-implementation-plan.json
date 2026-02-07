@@ -1,0 +1,62 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Switch landing page images from local uploads to provided GitHub raw URLs",
+  "requirements": [
+    {
+      "id": "REQ-22",
+      "summary": "Replace centralized landing image paths with the 7 provided GitHub raw JPEG URLs mapped to the correct LANDING_IMAGES keys.",
+      "acceptanceCriteria": [
+        "frontend/src/constants/landingImages.ts contains exactly 7 URLs, all pointing to the provided https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/*.jpeg resources",
+        "All LANDING_IMAGES keys (hero, solution, benefitsStrip1, benefitsStrip2, ingredients, testimonials, strongCta) resolve to valid https://raw.githubusercontent.com/... URLs (no /assets/uploads/* references remain in this module)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/constants/landingImages.ts",
+          "operation": "modify",
+          "description": "Replace all /assets/uploads/* values with exactly these 7 GitHub raw URLs mapped to the existing keys: benefitsStrip1=https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/images%20(1)%20(2).jpeg, solution=https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/images%20(1)%20(3).jpeg, ingredients=https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/images%20(1)%20(4).jpeg, benefitsStrip2=https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/images%20(1)%20(5).jpeg, testimonials=https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/images%20(1)%20(6).jpeg, hero=https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/images%20(1)%20(7).jpeg, strongCta=https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/images%20(1)%20(8).jpeg. Ensure the module contains exactly 7 URLs and no /assets/uploads references."
+        }
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "summary": "Ensure all landing page sections use LANDING_IMAGES (no hardcoded legacy upload paths) so the new URLs load everywhere images appear.",
+      "acceptanceCriteria": [
+        "No landing page section component hardcodes any of the old /assets/uploads/* image paths",
+        "After the change, all images visible on the landing page load successfully at runtime using the new GitHub raw URLs (no broken images)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Audit and ensure the hero image is sourced exclusively from LANDING_IMAGES.hero, with no direct /assets/uploads/* strings present. Do not change any Buy Now CTA label or redirect behavior."
+        },
+        {
+          "path": "frontend/src/components/landing/sections/SolutionSection.tsx",
+          "operation": "modify",
+          "description": "Audit and ensure the solution section image is sourced exclusively from LANDING_IMAGES.solution, with no direct /assets/uploads/* strings present. Do not change any Buy Now CTA label or redirect behavior."
+        },
+        {
+          "path": "frontend/src/components/landing/sections/BenefitsSection.tsx",
+          "operation": "modify",
+          "description": "Audit and ensure both benefits strip images are sourced exclusively from LANDING_IMAGES.benefitsStrip1 and LANDING_IMAGES.benefitsStrip2, with no direct /assets/uploads/* strings present. Do not change any Buy Now CTA label or redirect behavior."
+        },
+        {
+          "path": "frontend/src/components/landing/sections/IngredientsSection.tsx",
+          "operation": "modify",
+          "description": "Audit and ensure the ingredients section image is sourced exclusively from LANDING_IMAGES.ingredients, with no direct /assets/uploads/* strings present. Do not change any Buy Now CTA label or redirect behavior."
+        },
+        {
+          "path": "frontend/src/components/landing/sections/TestimonialsSection.tsx",
+          "operation": "modify",
+          "description": "Audit and ensure the testimonials supporting image is sourced exclusively from LANDING_IMAGES.testimonials, with no direct /assets/uploads/* strings present. Do not change any Buy Now CTA label or redirect behavior."
+        },
+        {
+          "path": "frontend/src/components/landing/sections/StrongCTASection.tsx",
+          "operation": "modify",
+          "description": "Audit and ensure the strong CTA image is sourced exclusively from LANDING_IMAGES.strongCta, with no direct /assets/uploads/* strings present. Do not change any Buy Now CTA label or redirect behavior."
+        }
+      ]
+    }
+  ]
+}

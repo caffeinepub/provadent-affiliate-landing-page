@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        
+        /* White background for clean medical look */
+        --background: 1 0 0;
+        --foreground: 0.145 0 0;
+        
+        /* Premium indigo/purple primary colors for attractive CTAs */
+        --primary: 0.55 0.20 270;
+        --primary-foreground: 0.99 0 0;
+        
+        /* Light teal secondary */
+        --secondary: 0.92 0.08 195;
+        --secondary-foreground: 0.25 0.12 195;
+        
+        /* Muted grays for text hierarchy */
+        --muted: 0.96 0.01 240;
+        --muted-foreground: 0.50 0.02 240;
+        
+        /* Teal accent */
+        --accent: 0.88 0.10 195;
+        --accent-foreground: 0.25 0.12 195;
+        
+        /* Card and popover whites */
+        --card: 1 0 0;
+        --card-foreground: 0.145 0 0;
+        --popover: 1 0 0;
+        --popover-foreground: 0.145 0 0;
+        
+        /* Borders and inputs - subtle grays */
+        --border: 0.90 0.01 240;
+        --input: 0.90 0.01 240;
+        --ring: 0.55 0.20 270;
+        
+        /* Destructive red for warnings */
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        
+        /* Chart colors - teal/blue palette */
+        --chart-1: 0.60 0.18 195;
+        --chart-2: 0.65 0.15 210;
+        --chart-3: 0.55 0.12 180;
+        --chart-4: 0.70 0.14 200;
+        --chart-5: 0.50 0.16 190;
+    }
+
+    .dark {
+        --background: 0.145 0 0;
+        --foreground: 0.985 0 0;
+        --card: 0.205 0 0;
+        --card-foreground: 0.985 0 0;
+        --popover: 0.269 0 0;
+        --popover-foreground: 0.985 0 0;
+        --primary: 0.65 0.22 270;
+        --primary-foreground: 0.99 0 0;
+        --secondary: 0.269 0.05 195;
+        --secondary-foreground: 0.985 0 0;
+        --muted: 0.269 0.02 240;
+        --muted-foreground: 0.708 0.02 240;
+        --accent: 0.371 0.08 195;
+        --accent-foreground: 0.985 0 0;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.205 0 0;
+        --border: 1 0 0 / 10%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.556 0.18 270;
+        --chart-1: 0.60 0.18 195;
+        --chart-2: 0.65 0.15 210;
+        --chart-3: 0.55 0.12 180;
+        --chart-4: 0.70 0.14 200;
+        --chart-5: 0.50 0.16 190;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}

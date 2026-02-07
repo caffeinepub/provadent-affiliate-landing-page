@@ -1,0 +1,53 @@
+{
+  "kind": "build_request",
+  "title": "Replace landing page image sources with provided GitHub raw URLs",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-22",
+      "text": "Update the centralized landing page image path module (frontend/src/constants/landingImages.ts) to use the user-provided GitHub raw image URLs instead of the current /assets/uploads/* paths, mapping each URL to the correct LANDING_IMAGES key (hero, solution, benefitsStrip1, benefitsStrip2, ingredients, testimonials, strongCta).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Replace this link from images https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/images%20(1)%20(2).jpeg\", ... \"https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/images%20(1)%20(8).jpeg\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "frontend/src/constants/landingImages.ts contains exactly 7 URLs, all pointing to the provided https://raw.githubusercontent.com/Automation8248/Digi-affiliate-blog-/main/images/provadent/*.jpeg resources",
+        "All LANDING_IMAGES keys (hero, solution, benefitsStrip1, benefitsStrip2, ingredients, testimonials, strongCta) resolve to valid https://raw.githubusercontent.com/... URLs (no /assets/uploads/* references remain in this module)"
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "text": "Ensure all landing page sections continue to render their images exclusively via imports from LANDING_IMAGES so that the new URLs are used everywhere the landing page shows images (Hero, Solution, Benefits image strip, Ingredients, Testimonials supporting image, Strong CTA).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Replace this link from images ..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "No landing page section component hardcodes any of the old /assets/uploads/* image paths",
+        "After the change, all images visible on the landing page load successfully at runtime using the new GitHub raw URLs (no broken images)"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change CTA behavior: all CTA buttons must remain labeled exactly “Buy Now” and must continue redirecting to https://dentalsugarhack.vip/discovery#aff=Nexora_8248.",
+    "Do not introduce backend changes; this update is frontend-only."
+  ],
+  "nonGoals": [
+    "Do not change any marketing copy, section order, or CTA styling as part of this request.",
+    "Do not add new images beyond replacing the existing 7 image sources."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

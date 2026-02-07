@@ -1,0 +1,21 @@
+{
+  "frontend/src/App.tsx": "Main application entry point that renders the LandingPage component.",
+  "frontend/src/constants/affiliate.ts": "Centralized constants for the affiliate URL and CTA button label.",
+  "frontend/src/content/provadentCopy.ts": "All marketing copy for the landing page organized by section with compliant, benefit-driven language.",
+  "frontend/src/components/cta/BuyNowButton.tsx": "Reusable CTA button component with premium orange gradient styling (orange-500 to orange-600), hover effects, focus-visible ring, and affiliate URL redirect.",
+  "frontend/src/pages/LandingPage.tsx": "Main landing page component that composes all 11 required sections in order.",
+  "frontend/src/components/landing/sections/HeroSection.tsx": "Above-the-fold hero section with headline, product image, trust badges, star rating, and two premium CTA buttons (one below the image and one at the bottom).",
+  "frontend/src/components/landing/sections/ProblemSection.tsx": "Problem section explaining common dental issues with emotional, relatable copy and three problem cards.",
+  "frontend/src/components/landing/sections/SolutionSection.tsx": "ProvaDent solution section with product image, Buy Now button below the image, and four key benefit points with checkmarks.",
+  "frontend/src/components/landing/sections/BenefitsSection.tsx": "Five-item benefits grid with icons and supporting image strip displaying two images, each with a Buy Now button directly below.",
+  "frontend/src/components/landing/sections/HowItWorksSection.tsx": "Three-step numbered process explaining how ProvaDent works.",
+  "frontend/src/components/landing/sections/IngredientsSection.tsx": "Ingredients and formula section with product image, Buy Now button below the image, and four feature cards highlighting quality and science-backed formulation.",
+  "frontend/src/components/landing/sections/TestimonialsSection.tsx": "Social proof section with six customer testimonials and supporting image with Buy Now button directly below.",
+  "frontend/src/components/landing/sections/TrustSafetySection.tsx": "Trust and safety section listing five quality certifications and trust factors.",
+  "frontend/src/components/landing/sections/StrongCTASection.tsx": "Strong call-to-action section with urgency messaging, product image with Buy Now button below it, and an additional premium Buy Now button in the content column.",
+  "frontend/src/components/landing/sections/FAQSection.tsx": "Accessible accordion FAQ section with six common questions and compliant answers.",
+  "frontend/src/components/landing/sections/FooterSection.tsx": "Footer component with Privacy Policy and Terms & Conditions dialogs and copyright attribution, with affiliate and health disclaimers removed.",
+  "frontend/src/index.css": "Global styles with OKLCH color system customized for medical/dental aesthetic with teal accent palette and premium indigo/purple primary colors for CTAs.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with teal color palette and Inter font for clean, professional typography.",
+  "frontend/src/constants/landingImages.ts": "Centralized module exporting all landing page image paths as constants, now pointing to GitHub raw URLs instead of local uploads."
+}
